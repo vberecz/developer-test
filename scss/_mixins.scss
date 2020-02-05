@@ -1,0 +1,65 @@
+@mixin fontFace($family, $src, $style: normal, $weight: normal) {
+		@font-face {
+				font-family: $family;
+				src: url('#{$src}.eot');
+				src: url('#{$src}.eot?#iefix') format('embedded-opentype'),
+				url('#{$src}.woff') format('woff'),
+				url('#{$src}.woff2') format('woff2'),
+				url('#{$src}.ttf') format('truetype');
+				font-style: $style;
+				font-weight: $weight;
+		}
+}
+@mixin css3-prefix($property, $value) {
+		-webkit-#{$property}: #{$value};
+		-moz-#{$property}: #{$value};
+		-ms-#{$property}: #{$value};
+		-o-#{$property}: #{$value};
+		#{$property}: #{$value};
+}
+@mixin border-radius($radius: 4px) {
+		@include css3-prefix('border-radius', $radius);
+}
+@mixin padding-side($topbottom: 0px, $leftright: 0px) {
+		padding: $topbottom $leftright;
+}
+@mixin margin-side($topbottom: 0px, $leftright: 0px) {
+		margin: $topbottom $leftright;
+}
+@mixin no-margin-padding($margin: 0px, $padding: 0px) {
+		margin: $margin !important;
+		padding: $padding !important;
+}
+@mixin font-size($font-size: default, $type: px) {
+		font-size: font-size($font-size, $type);
+}
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+		position: $position;
+		top: $top;
+		right: $right;
+		bottom: $bottom;
+		left: $left;
+}
+@mixin background-gradient($start-color, $endColor) {
+		background: $start-color;
+		background: -moz-linear-gradient(left, $start-color 0%, $endColor 100%);
+		background: -webkit-gradient(left top, right top, color-stop(0%, $endColor), color-stop(100%, $endColor));
+		background: -webkit-linear-gradient(left, $start-color 0%, $endColor 100%);
+		background: -o-linear-gradient(left, $start-color 0%, $endColor 100%);
+		background: -ms-linear-gradient(left, $start-color 0%, $endColor 100%);
+		background: linear-gradient(to right, $start-color 0%, $endColor 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$endColor', GradientType=1 );
+}
+@mixin font ($font-size:default, $fonttype: px, $font-weight:normal, $lineheight: default){
+		font-size: font-size($font-size, $fonttype);
+		font-weight: font-weight($font-weight);
+		line-height: $lineheight;
+}
+@mixin transition($args) {
+		@include css3-prefix('transition', $args);
+}
+@mixin desktop {
+		@media (min-width: #{$big-tablet-width}) {
+				@content;
+		}
+}

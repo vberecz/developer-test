@@ -1,0 +1,91 @@
+@include fontFace('regular','../fonts/Montserrat-Regular');
+@include fontFace('medium','../fonts/Montserrat-Medium');
+@include fontFace('semi-bold','../fonts/Montserrat-SemiBold');
+@include fontFace('bold','../fonts/Montserrat-Bold');
+
+body, html{}
+
+p,ul,ol,dl,a,input,textarea {
+		font-family: regular, sans-serif;
+		font-size: font-size(default, px);
+}
+label{
+		font-family: regular, sans-serif;
+		font-size: font-size(label, px);
+		color: color(gray, placeholder);
+}
+p{
+		margin:0;
+		padding:0;
+}
+a{
+		text-decoration: none;
+		&:hover{
+				text-decoration: underline;
+		}
+		&.main-nav{
+				font-family: bold, sans-serif;
+				color: color(gray, darker);
+				font-size: font-size(mainNav, px);
+		}
+		h3 {
+				font-family: bold, sans-serif;
+				@include font(h3, px, normal, 28px);
+				color: color(gray, medium);
+		}
+}
+h1,h2,h3,h4,h5,h6{
+		font-family: bold, sans-serif;
+		color: color(gray,light);
+}
+h1 {
+		@include font(h1, px, normal, 62px);
+}
+h2 {
+		font-family: semi-bold, sans-serif;
+		@include font(h2, px, normal, 22px);
+		color: color(white, primary);
+}
+h3 {
+		a {
+				font-family: bold, sans-serif;
+				@include font(h3, px, normal, 28px);
+				color: color(gray, medium);
+		}
+}
+h4{
+		color: color(gray,light);
+		@include font(h4, px, normal, 18px);
+}
+footer{
+		ul{
+				li{
+						a{
+								font-family: regular, sans-serif;
+								color: color(gray, lightest);
+								font-size: font-size(footerNav, px);
+						}
+				}
+		}
+}
+@media (max-width: 62em) {
+		h1 {
+				@include font(mH1, px, normal, 38px);
+		}
+		h2 {
+				font-family: semi-bold, sans-serif;
+				@include font(h2, px, normal, 22px);
+				color: color(white, primary);
+		}
+		h3 {
+				a {
+						font-family: bold, sans-serif;
+						@include font(h3, px, normal, 28px);
+						color: color(gray, medium);
+				}
+		}
+		h4{
+				color: color(gray,light);
+				@include font(h4, px, normal, 18px);
+		}
+}

@@ -1,0 +1,12 @@
+body, html{
+		@include no-margin-padding();
+}
+ul{
+		list-style-type: none;
+		@include no-margin-padding();
+}
+@media (min-width: 1200px){
+		.container {
+				max-width: 1371px;
+		}
+}

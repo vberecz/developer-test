@@ -1,0 +1,34 @@
+.button{
+		font-family: semi-bold, sans-serif;
+		font-size: font-size(mainNav, px);
+		@include padding-side(14px, 69px);
+		display:inline-block;
+		&.__primary{
+				color: color(white, primary);
+				background-color: color(black, primary);
+				margin-top:40px;
+		}
+		&.__link{
+				@include padding-side(0px, 0px);
+				@include font(default, px, normal, 19px);
+				color: color(brown, light);
+				font-family: medium, sans-serif;
+				margin-top:30px;
+				position: relative;
+				.iconset-arrow{
+						@include position(absolute, $top:4px, $right:-20px);
+						font-size:12px;
+				}
+		}
+		&.__subscribe{
+				width:100%;
+				background-color: color(black, primary);
+				outline:none;
+				color: color(white, primary);
+				border:none;
+				cursor:pointer;
+				height:40px;
+				padding:0;
+				@include font(default, px, normal, 28px);
+		}
+}

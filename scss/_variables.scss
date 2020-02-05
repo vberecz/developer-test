@@ -1,0 +1,71 @@
+$colors: (
+		white: (
+						primary: #ffffff,
+						bg: #f7f7f7
+		),
+		gray: (
+						lightest:#ababab,
+						light:#3a3a3a,
+						medium:#5a5a5a,
+						dark:#292929,
+						darker: #2e2e2e,
+						placeholder: #aeaeae,
+						bg: #ebebeb,
+						border: #dbdbdb
+		),
+		brown: (
+						light: #c4a37b
+		),
+		black: (
+						primary: #000000,
+						bg: #242123
+		)
+);
+$font-size: (
+				px: (
+								h1: 50px,
+								mH1: 28px,
+								h2: 18px,
+
+								h3: 18px,
+								h4: 14px,
+								p: 18px,
+								mainNav: 18px,
+								footerNav: 14px,
+								label: 14px,
+								bigFont: 220px,
+								default: 16px,
+								leather: 50px,
+								water: 46px,
+								spring: 46px,
+				)
+);
+$z-indexes: (
+		"modal",
+		"site-header",
+		"page-wrapper",
+		"site-footer"
+);
+$font-weight: (
+		default: (
+				normal: 400,
+				medium: 600,
+		)
+);
+// 1400px
+$big-desktop-width: 87.5rem;
+
+// 365px
+$bigger-mobile-width: 22.813em;
+
+// 768px
+$small-tablet-width: 48em;
+
+// 1025px
+$big-tablet-width: 64.0625em;
+
+// 992px
+$middle-tablet-width: 62em;
+
+// 1200px
+$desktop-width: 75em;

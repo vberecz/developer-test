@@ -1,0 +1,140 @@
+header {
+		width:100%;
+		max-width:1371px;
+		@include position(fixed, $top:0, $left:0, $right:0);
+		margin:0 auto;
+		@include padding-side($leftright:20px);
+		background-color: color(white,primary);
+		z-index: z('site-header');
+		.logo{
+				display:inline-block;
+				a{
+						display:inline-block;
+						@include padding-side($topbottom:12px);
+				}
+		}
+}
+nav{
+		float:none;
+		display: inline;
+	ul{
+			@include padding-side(0);
+			@include margin-side(0);
+			overflow: hidden;
+			li{
+					display:block;
+					text-align: center;
+					@include padding-side($topbottom:10px);
+					a{
+							@include padding-side(10px, 20px);
+					}
+			}
+	}
+}
+
+.menu {
+		clear: both;
+		max-height: 0;
+		transition: max-height 0.2s ease-out;
+}
+
+/* menu icon */
+
+.menu-icon {
+		cursor: pointer;
+		display: inline-block;
+		float: right;
+		@include padding-side(28px, 20px);
+		position: relative;
+		user-select: none;
+}
+
+.menu-icon .navicon {
+		background: color(gray, light);
+		display: block;
+		height: 2px;
+		position: relative;
+		transition: background 0.2s ease-out;
+		width: 27px;
+		@include border-radius(2px);
+}
+
+ .menu-icon .navicon:before,
+ .menu-icon .navicon:after {
+		background: color(gray, light);
+		content: "";
+		display: block;
+		height: 100%;
+		 width: 100%;
+		 position: absolute;
+		 transition: all 0.2s ease-out;
+		 @include border-radius(2px);
+}
+
+.menu-icon .navicon:before {
+		top: 8px;
+}
+
+.menu-icon .navicon:after {
+		top: -8px;
+}
+
+/* menu btn */
+
+ .menu-btn {
+		display: none;
+}
+
+.menu-btn:checked ~ .menu {
+		max-height:300px;
+}
+
+.menu-btn:checked ~ .menu-icon .navicon {
+		background: transparent;
+}
+
+.menu-btn:checked ~ .menu-icon .navicon:before {
+		transform: rotate(-45deg);
+}
+
+.menu-btn:checked ~ .menu-icon .navicon:after {
+		transform: rotate(45deg);
+}
+
+ .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+ .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+		top: 0;
+}
+@media (min-width: 62em) {
+		header {
+				@include position(fixed, $top:0, $left:0, $right:0);
+				@include padding-side($leftright:40px);
+				.logo{
+						display:inline-block;
+						a{
+								display:inline-block;
+								@include padding-side($topbottom:24px);
+						}
+				}
+		}
+		nav{
+				float:right;
+				ul{
+						li{
+								display:inline-block;
+								@include padding-side($topbottom:31px);
+								a{
+										@include padding-side(31px, 20px);
+								}
+						}
+				}
+		}
+		.menu {
+				clear: none;
+				float: right;
+				max-height: none;
+		}
+		.menu-icon {
+				display: none;
+		}
+}

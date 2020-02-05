@@ -1,0 +1,27 @@
+.blog{
+		width:100%;
+		position: relative;
+		.blog-content{
+				margin-top:50px;
+				.blog-img{
+						position: relative;
+						max-height:240px;
+						overflow: hidden;
+						img{width:100%;display:block;}
+				}
+				.boxes{
+						@include padding-side(31px, 21px);
+						border:1px solid rgba(41,41,41, 0.1);
+						h3{
+								@include margin-side($topbottom:0);
+						}
+				}
+		}
+}
+@media (max-width: 62em) {
+		.blog{
+				.blog-content{
+						margin-top:30px;
+				}
+		}
+}
